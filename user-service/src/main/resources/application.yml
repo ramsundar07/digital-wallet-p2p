@@ -1,0 +1,24 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: user-service
+  datassource:
+    url: jdbc:h2:mem:userdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect # Tells JPA to use H2 dialect
+    hibernate:
+      ddl-auto: validate
+      # For production, use 'none' or 'validate' and manage schema with Flyway/Liquibase.
+    show-sql: true # Log SQL queries to the console (useful for debugging)
+  h2:
+    console:
+      enabled: true # Enable H2 database console for easy access
+      path: /h2-console
+  flyway:
+      enabled: true
+      location: classpath:db/migration
+      baseline-on-migrate: true
