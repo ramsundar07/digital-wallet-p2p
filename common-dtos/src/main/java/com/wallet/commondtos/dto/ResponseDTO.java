@@ -1,11 +1,5 @@
 package com.wallet.commondtos.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+public record ResponseDTO<T>(String statusCode, String statusMsg, T data) {
 
-@Data
-@AllArgsConstructor
-public class ResponseDTO {
-    private String statusCode;
-    private String statusMsg;
 }

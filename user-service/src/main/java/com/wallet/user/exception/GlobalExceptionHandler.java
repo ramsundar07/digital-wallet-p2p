@@ -19,7 +19,6 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
@@ -66,7 +65,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             String validationMsg = error.getDefaultMessage();
             validationErrorMap.put(fieldName,validationMsg);
         });
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(validationErrorMap);
+        ErrorResponseDTO errorResponseDTO = new ErrorResponseDTO(
+                request.getDescription(false) ,
+                HttpStatus.INTERNAL_SERVER_ERROR.value() ,
+                validationErrorMap,
+                LocalDateTime.now()
+        );
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponseDTO);
     }
 
 }

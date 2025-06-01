@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class ErrorResponseDTO {
     private String apiPath;
     private int errorCode;
-    private String errorMsg;
+    private Object errorMsg;
     private LocalDateTime timeStamp;
 
 }

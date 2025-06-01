@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: user-service
-  datassource:
+  datasource:
     url: jdbc:h2:mem:userdb
     driverClassName: org.h2.Driver
     username: sa
@@ -22,3 +22,23 @@ spring:
       enabled: true
       location: classpath:db/migration
       baseline-on-migrate: true
+logging:
+  level:
+    root: INFO # Default log level for all loggers. Logs at INFO, WARN, ERROR, FATAL.
+    com.wallet.user: DEBUG # Set DEBUG level specifically for your application's packages. This will show all INFO, DEBUG, WARN, ERROR, FATAL messages from your code.
+    org.springframework.web: INFO # Spring web logs at INFO level (e.g., incoming requests, handler mappings).
+    org.hibernate.SQL: DEBUG # To see the actual SQL queries executed by Hibernate. Very useful for debugging.
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE # To see the parameters bound to the SQL queries. (Be cautious with this in production as it can log sensitive data).
+    org.springframework.security: INFO # ADDED: Log level for Spring Security components.
+  file:
+    name: logs/user-service.log # Path to the log file (relative to the application's working directory). This will create a 'logs' folder and put the log file there.
+    max-size: 10MB # Maximum size of each log file before it's rolled over (archived).
+    max-history: 7 # Maximum number of archived log files to keep. Older files will be deleted.
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" # Pattern for console output.
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" # Pattern for file output.
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html # Customize the path to Swagger UI (default is /swagger-ui/index.html)
+  api-docs:
+    path: /v3/api-docs

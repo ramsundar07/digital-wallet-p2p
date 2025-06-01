@@ -14,7 +14,6 @@ public class UserDTOMapper {
         user.setUserName(userRequestDTO.getUserName());
         user.setEmail(userRequestDTO.getEmail());
         user.setPhoneNumber(userRequestDTO.getPhoneNumber());
-        user.setPassword(userRequestDTO.getPassword());
     }
 
     /**
