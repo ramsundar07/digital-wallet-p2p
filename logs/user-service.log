@@ -1,1249 +1,147 @@
-2025-06-01 16:38:13.401 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 3688 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 16:38:13.416 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 16:38:13.418 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 16:38:14.447 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 16:38:14.524 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interface.
-2025-06-01 16:38:16.027 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 16:38:16.044 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 16:38:16.045 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 16:38:16.130 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 16:38:16.131 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2631 ms
-2025-06-01 16:38:16.174 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 16:38:16.547 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:22afcd82-2489-422f-85fd-2390c036abe9 user=SA
-2025-06-01 16:38:16.549 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 16:38:16.564 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:22afcd82-2489-422f-85fd-2390c036abe9'
-2025-06-01 16:38:16.903 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 16:38:16.903 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 16:38:16.903 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 16:38:16.985 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:22afcd82-2489-422f-85fd-2390c036abe9 (H2 2.2)
-2025-06-01 16:38:16.994 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 16:38:17.029 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 16:38:17.034 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.023s)
-2025-06-01 16:38:17.044 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 16:38:17.089 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 16:38:17.097 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 16:38:17.128 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.012s)
-2025-06-01 16:38:17.300 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 16:38:17.432 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 16:38:17.495 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 16:38:17.944 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 16:38:18.018 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 16:38:18.979 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 16:38:19.013 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 16:38:19.539 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 16:38:20.075 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-06-02 21:53:04.983 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 16672 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
+2025-06-02 21:53:04.997 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-06-02 21:53:04.999 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 21:53:06.491 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-02 21:53:06.581 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interface.
+2025-06-02 21:53:07.661 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-02 21:53:07.682 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-02 21:53:07.682 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-06-02 21:53:07.786 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-02 21:53:07.787 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2686 ms
+2025-06-02 21:53:07.844 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-02 21:53:08.198 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
+2025-06-02 21:53:08.203 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-02 21:53:08.224 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
+2025-06-02 21:53:08.501 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-02 21:53:08.502 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-02 21:53:08.502 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-02 21:53:08.580 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
+2025-06-02 21:53:08.588 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2025-06-02 21:53:08.644 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2025-06-02 21:53:08.648 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.043s)
+2025-06-02 21:53:08.656 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-06-02 21:53:08.691 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2025-06-02 21:53:08.698 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
+2025-06-02 21:53:08.725 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
+2025-06-02 21:53:08.764 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.041s)
+2025-06-02 21:53:08.912 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-02 21:53:09.030 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-02 21:53:09.118 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-02 21:53:09.647 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-02 21:53:09.816 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-02 21:53:11.521 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-02 21:53:11.550 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02 21:53:12.257 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-02 21:53:12.301 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: 0ae239d5-301f-4b53-b1b9-3d9ec7c07c0c
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 16:38:20.263 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3985175e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@d91e8c7, org.springframework.security.web.context.SecurityContextHolderFilter@19bad88, org.springframework.security.web.header.HeaderWriterFilter@62682ece, org.springframework.web.filter.CorsFilter@5b9ca528, org.springframework.security.web.csrf.CsrfFilter@6c2d124e, org.springframework.security.web.authentication.logout.LogoutFilter@3aae9e8f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1a13b5c1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3420547, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@66011fbc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2a23c061, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1488d1c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@b21cbbf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77afdbc5, org.springframework.security.web.access.ExceptionTranslationFilter@d79a69b, org.springframework.security.web.access.intercept.AuthorizationFilter@20331c8e]
-2025-06-01 16:38:20.381 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 16:38:20.394 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.884 seconds (process running for 8.733)
-2025-06-01 16:58:01.635 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 16:58:01.638 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 16:58:01.641 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 16:58:10.211 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 16692 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 16:58:10.213 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 16:58:10.215 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 16:58:11.279 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 16:58:11.367 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interface.
-2025-06-01 16:58:12.767 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 16:58:12.784 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 16:58:12.784 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 16:58:12.875 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 16:58:12.876 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2553 ms
-2025-06-01 16:58:12.938 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 16:58:13.306 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:da88821e-d339-49d3-9711-e6c27563b8d4 user=SA
-2025-06-01 16:58:13.308 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 16:58:13.322 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:da88821e-d339-49d3-9711-e6c27563b8d4'
-2025-06-01 16:58:13.574 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 16:58:13.574 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 16:58:13.574 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 16:58:13.638 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:da88821e-d339-49d3-9711-e6c27563b8d4 (H2 2.2)
-2025-06-01 16:58:13.647 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 16:58:13.680 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 16:58:13.685 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.020s)
-2025-06-01 16:58:13.693 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 16:58:13.733 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 16:58:13.740 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 16:58:13.762 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.009s)
-2025-06-01 16:58:13.931 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 16:58:14.074 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 16:58:14.151 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 16:58:14.555 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 16:58:14.640 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 16:58:15.649 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 16:58:15.675 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 16:58:16.359 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 16:58:17.224 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 0814316a-ce6a-4d90-9fc6-0eb54ce81dce
+Using generated security password: 79c6f555-8a39-4084-9f87-e121978d3797
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-06-01 16:58:17.628 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2226fd2b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1488d1c, org.springframework.security.web.context.SecurityContextHolderFilter@6980fa39, org.springframework.security.web.header.HeaderWriterFilter@106c73ed, org.springframework.web.filter.CorsFilter@b21cbbf, org.springframework.security.web.csrf.CsrfFilter@89dd102, org.springframework.security.web.authentication.logout.LogoutFilter@3abd7b20, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3c3a767, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@a1c4f69, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@578ac0be, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3c83e9ca, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c855ef0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3dedc8b8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4250b0c1, org.springframework.security.web.access.ExceptionTranslationFilter@6aff157e, org.springframework.security.web.access.intercept.AuthorizationFilter@c0b10ae]
-2025-06-01 16:58:17.891 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 16:58:17.907 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 8.553 seconds (process running for 9.329)
-2025-06-01 16:58:24.942 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 16:58:24.945 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 16:58:24.955 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 16:58:30.595 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 5228 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 16:58:30.597 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 16:58:30.598 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 16:58:31.547 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 16:58:31.607 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
-2025-06-01 16:58:32.959 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 16:58:32.975 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 16:58:32.975 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 16:58:33.065 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 16:58:33.066 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2383 ms
-2025-06-01 16:58:33.117 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 16:58:33.411 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:19028072-4790-4373-9252-f790e56ad884 user=SA
-2025-06-01 16:58:33.413 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 16:58:33.431 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:19028072-4790-4373-9252-f790e56ad884'
-2025-06-01 16:58:33.672 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 16:58:33.672 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 16:58:33.672 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 16:58:33.748 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:19028072-4790-4373-9252-f790e56ad884 (H2 2.2)
-2025-06-01 16:58:33.758 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 16:58:33.796 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 16:58:33.801 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.024s)
-2025-06-01 16:58:33.812 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 16:58:33.852 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 16:58:33.859 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 16:58:33.880 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.010s)
-2025-06-01 16:58:34.035 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 16:58:34.138 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 16:58:34.185 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 16:58:34.533 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 16:58:34.600 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 16:58:35.529 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 16:58:35.552 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 16:58:36.096 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 16:58:36.613 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-06-02 21:53:13.569 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6020cd42, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b68c59b, org.springframework.security.web.context.SecurityContextHolderFilter@1ead6e20, org.springframework.web.filter.CorsFilter@326d39fd, org.springframework.security.web.authentication.logout.LogoutFilter@4f5ad6b7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5b9c74a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@389fad5b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d72da0b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@403f6c04, org.springframework.security.web.access.ExceptionTranslationFilter@240c626d, org.springframework.security.web.access.intercept.AuthorizationFilter@6fe55fcf]
+2025-06-02 21:53:14.100 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2025-06-02 21:53:14.119 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 10.012 seconds (process running for 10.846)
+2025-06-02 21:53:19.277 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02 21:53:19.277 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-02 21:53:19.279 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-02 21:53:20.196 [http-nio-8081-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 459 ms
+2025-06-02 22:09:04.856 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02 22:09:04.859 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-02 22:09:04.865 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-02 22:09:10.523 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 10008 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
+2025-06-02 22:09:10.525 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-06-02 22:09:10.526 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 22:09:11.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-02 22:09:12.056 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interface.
+2025-06-02 22:09:13.047 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-02 22:09:13.071 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-02 22:09:13.072 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-06-02 22:09:13.201 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-02 22:09:13.202 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2571 ms
+2025-06-02 22:09:13.248 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-02 22:09:13.602 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
+2025-06-02 22:09:13.604 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-02 22:09:13.619 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
+2025-06-02 22:09:13.876 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-02 22:09:13.877 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-02 22:09:13.877 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-02 22:09:13.966 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
+2025-06-02 22:09:13.976 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2025-06-02 22:09:14.015 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2025-06-02 22:09:14.021 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.026s)
+2025-06-02 22:09:14.030 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-06-02 22:09:14.070 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2025-06-02 22:09:14.077 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
+2025-06-02 22:09:14.104 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
+2025-06-02 22:09:14.153 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.050s)
+2025-06-02 22:09:14.296 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-02 22:09:14.433 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-02 22:09:14.503 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-02 22:09:14.912 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-02 22:09:14.992 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-02 22:09:16.087 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-02 22:09:16.113 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02 22:09:16.653 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-02 22:09:16.691 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: 8f350d41-9cb7-486a-b151-75f1f327c8f0
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 16:58:36.786 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1737834, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58ec3e8b, org.springframework.security.web.context.SecurityContextHolderFilter@5cdafb4d, org.springframework.security.web.header.HeaderWriterFilter@2314f013, org.springframework.web.filter.CorsFilter@22decfa2, org.springframework.security.web.csrf.CsrfFilter@6980fa39, org.springframework.security.web.authentication.logout.LogoutFilter@d79a69b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6ce1cc03, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@f69e35a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3aae9e8f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@69860811, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ae6119b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31b6eec8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2086f336, org.springframework.security.web.access.ExceptionTranslationFilter@3070f59f, org.springframework.security.web.access.intercept.AuthorizationFilter@44d36b56]
-2025-06-01 16:58:36.896 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 16:58:36.907 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.167 seconds (process running for 7.892)
-2025-06-01 17:03:57.332 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:03:57.334 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:03:57.336 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:04:02.773 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 14232 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:04:02.776 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:04:02.778 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:04:03.703 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:04:03.769 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 55 ms. Found 1 JPA repository interface.
-2025-06-01 17:04:05.052 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:04:05.094 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:04:05.095 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:04:05.337 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:04:05.337 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2446 ms
-2025-06-01 17:04:05.412 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:04:05.736 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:adb8e767-c965-4a79-a1ec-e2026bd52bf0 user=SA
-2025-06-01 17:04:05.738 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:04:05.751 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:adb8e767-c965-4a79-a1ec-e2026bd52bf0'
-2025-06-01 17:04:05.960 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:04:05.960 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:04:05.960 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:04:06.031 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:adb8e767-c965-4a79-a1ec-e2026bd52bf0 (H2 2.2)
-2025-06-01 17:04:06.037 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:04:06.074 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:04:06.079 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.025s)
-2025-06-01 17:04:06.088 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:04:06.129 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:04:06.136 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:04:06.159 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.010s)
-2025-06-01 17:04:06.320 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:04:06.400 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:04:06.448 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:04:06.854 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:04:06.932 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:04:08.144 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:04:08.201 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:04:09.043 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:04:09.102 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 867c5b36-cab3-4447-b082-696facc3593e
+Using generated security password: 269e7afb-2dfe-4261-af36-abbbb71d09de
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-06-01 17:04:09.707 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d086485, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74130456, org.springframework.security.web.context.SecurityContextHolderFilter@365a4b9b, org.springframework.web.filter.CorsFilter@3b171fbd, org.springframework.security.web.authentication.logout.LogoutFilter@3c7787a7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7dbe858f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76efa2b7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2027d56f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ece052b, org.springframework.security.web.access.ExceptionTranslationFilter@3891db3a, org.springframework.security.web.access.intercept.AuthorizationFilter@3ae91bcc]
-2025-06-01 17:04:10.310 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:04:10.321 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 8.386 seconds (process running for 9.068)
-2025-06-01 17:04:20.822 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:04:20.823 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:04:20.825 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-06-01 17:04:21.105 [http-nio-8081-exec-2] INFO  c.w.user.controller.UserController - Received request to create user with email: ram22@gmail.com
-2025-06-01 17:04:21.105 [http-nio-8081-exec-2] INFO  c.w.user.service.impl.UserService - Attempting to create user with email: ram22@gmail.com
-2025-06-01 17:04:21.280 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.email,u1_0.password,u1_0.phone_number,u1_0.user_name from users u1_0 where u1_0.email=? or u1_0.phone_number=?
-2025-06-01 17:04:21.436 [http-nio-8081-exec-2] DEBUG org.hibernate.SQL - insert into users (email,password,phone_number,user_name,id) values (?,?,?,?,default)
-2025-06-01 17:04:21.470 [http-nio-8081-exec-2] INFO  c.w.user.service.impl.UserService - User created successfully with ID: 1
-2025-06-01 17:04:21.471 [http-nio-8081-exec-2] INFO  c.w.user.controller.UserController - User creation request processed for email: ram22@gmail.com
-2025-06-01 17:05:12.124 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:05:12.130 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:05:12.134 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:05:17.411 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 16040 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:05:17.413 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:05:17.414 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:05:18.321 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:05:18.377 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
-2025-06-01 17:05:19.612 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:05:19.627 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:05:19.628 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:05:19.715 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:05:19.715 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2213 ms
-2025-06-01 17:05:19.762 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:05:20.099 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:be58eabe-3b10-4476-8edf-8c5268972b90 user=SA
-2025-06-01 17:05:20.102 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:05:20.117 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:be58eabe-3b10-4476-8edf-8c5268972b90'
-2025-06-01 17:05:20.355 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:05:20.355 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:05:20.355 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:05:20.424 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:be58eabe-3b10-4476-8edf-8c5268972b90 (H2 2.2)
-2025-06-01 17:05:20.431 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:05:20.466 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:05:20.471 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.022s)
-2025-06-01 17:05:20.480 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:05:20.521 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:05:20.527 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:05:20.551 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.011s)
-2025-06-01 17:05:20.709 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:05:20.820 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:05:20.887 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:05:21.281 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:05:21.345 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:05:22.274 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:05:22.296 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:05:22.896 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:05:22.938 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+2025-06-02 22:09:17.838 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@189fb01b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@49522bdf, org.springframework.security.web.context.SecurityContextHolderFilter@56897de0, org.springframework.web.filter.CorsFilter@77587422, org.springframework.security.web.authentication.logout.LogoutFilter@68e6856c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@257e8c43, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bc21edd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3599b7e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39eea4f6, org.springframework.security.web.access.ExceptionTranslationFilter@665e18d5, org.springframework.security.web.access.intercept.AuthorizationFilter@54c1878b]
+2025-06-02 22:09:18.344 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2025-06-02 22:09:18.357 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 8.64 seconds (process running for 9.358)
+2025-06-02 22:09:26.881 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02 22:09:26.882 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-02 22:09:26.883 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-06-02 22:09:27.704 [http-nio-8081-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 443 ms
+2025-06-02 22:15:01.649 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02 22:15:01.652 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-02 22:15:01.656 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-02 22:15:08.340 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 1536 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
+2025-06-02 22:15:08.342 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-06-02 22:15:08.344 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 22:15:10.071 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-02 22:15:10.148 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
+2025-06-02 22:15:11.327 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-06-02 22:15:11.361 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-06-02 22:15:11.361 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-06-02 22:15:11.488 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-06-02 22:15:11.488 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3023 ms
+2025-06-02 22:15:11.546 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-06-02 22:15:11.967 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
+2025-06-02 22:15:11.970 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-06-02 22:15:11.987 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
+2025-06-02 22:15:12.326 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
+2025-06-02 22:15:12.327 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
+2025-06-02 22:15:12.327 [main] INFO  o.f.c.i.license.VersionPrinter - 
+2025-06-02 22:15:12.427 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
+2025-06-02 22:15:12.439 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2025-06-02 22:15:12.475 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2025-06-02 22:15:12.479 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.023s)
+2025-06-02 22:15:12.489 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-06-02 22:15:12.537 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2025-06-02 22:15:12.546 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
+2025-06-02 22:15:12.579 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
+2025-06-02 22:15:12.634 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.059s)
+2025-06-02 22:15:12.789 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-02 22:15:12.926 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-06-02 22:15:12.984 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-06-02 22:15:13.321 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-02 22:15:13.383 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-02 22:15:14.424 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-02 22:15:14.452 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-02 22:15:15.192 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-02 22:15:15.240 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
 
-Using generated security password: 48677161-a342-49e6-b683-b15cbbe870fa
+Using generated security password: ef975557-d45b-4e28-96b5-b030485bc656
 
 This generated password is for development use only. Your security configuration must be updated before running your application in production.
 
-2025-06-01 17:05:23.376 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7dbe858f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@387ef6a7, org.springframework.security.web.context.SecurityContextHolderFilter@3891db3a, org.springframework.web.filter.CorsFilter@2330c995, org.springframework.security.web.authentication.logout.LogoutFilter@44ba9f25, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@33cec966, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7925e772, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@365a4b9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d086485, org.springframework.security.web.access.ExceptionTranslationFilter@1e1d813a, org.springframework.security.web.access.intercept.AuthorizationFilter@1a18e68a]
-2025-06-01 17:05:23.836 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:05:23.851 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.217 seconds (process running for 7.889)
-2025-06-01 17:05:31.348 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:05:31.349 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:05:31.352 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2025-06-01 17:05:31.599 [http-nio-8081-exec-1] INFO  c.w.user.controller.UserController - Received request to create user with email: ram22@gmail.com
-2025-06-01 17:05:31.600 [http-nio-8081-exec-1] INFO  c.w.user.service.impl.UserService - Attempting to create user with email: ram22@gmail.com
-2025-06-01 17:05:31.743 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.email,u1_0.password,u1_0.phone_number,u1_0.user_name from users u1_0 where u1_0.email=? or u1_0.phone_number=?
-2025-06-01 17:05:31.880 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - insert into users (email,password,phone_number,user_name,id) values (?,?,?,?,default)
-2025-06-01 17:05:31.913 [http-nio-8081-exec-1] INFO  c.w.user.service.impl.UserService - User created successfully with ID: 1
-2025-06-01 17:05:31.914 [http-nio-8081-exec-1] INFO  c.w.user.controller.UserController - User creation request processed for email: ram22@gmail.com
-2025-06-01 17:05:38.490 [http-nio-8081-exec-3] INFO  c.w.user.controller.UserController - Received request to fetch user by email: ram22@gmail.com
-2025-06-01 17:05:38.490 [http-nio-8081-exec-3] DEBUG c.w.user.service.impl.UserService - Fetching user by email: ram22@gmail.com
-2025-06-01 17:05:38.492 [http-nio-8081-exec-3] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.email,u1_0.password,u1_0.phone_number,u1_0.user_name from users u1_0 where u1_0.email=?
-2025-06-01 17:05:38.500 [http-nio-8081-exec-3] DEBUG c.w.user.service.impl.UserService - User found by email: ram22@gmail.com
-2025-06-01 17:05:38.500 [http-nio-8081-exec-3] INFO  c.w.user.controller.UserController - User fetched by email: ram22@gmail.com
-2025-06-01 17:08:33.275 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:08:33.277 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:08:33.279 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:08:39.847 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 11212 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:08:39.852 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:08:39.854 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:08:40.748 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:08:40.802 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
-2025-06-01 17:08:42.026 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:08:42.043 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:08:42.044 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:08:42.133 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:08:42.133 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2168 ms
-2025-06-01 17:08:42.178 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:08:42.474 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:16482d30-9932-45ad-9018-eab6f5bb32f3 user=SA
-2025-06-01 17:08:42.477 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:08:42.495 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:16482d30-9932-45ad-9018-eab6f5bb32f3'
-2025-06-01 17:08:42.741 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:08:42.741 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:08:42.741 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:08:42.804 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:16482d30-9932-45ad-9018-eab6f5bb32f3 (H2 2.2)
-2025-06-01 17:08:42.810 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:08:42.846 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:08:42.850 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.022s)
-2025-06-01 17:08:42.860 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:08:42.896 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:08:42.902 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:08:42.921 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.009s)
-2025-06-01 17:08:43.056 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:08:43.197 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:08:43.254 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:08:43.632 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:08:43.701 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:08:44.695 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:08:44.728 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:08:45.172 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:08:45.210 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 20ff3475-775a-4bfe-8067-25044bdd7793
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 17:08:45.651 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f63909f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3ae91bcc, org.springframework.security.web.context.SecurityContextHolderFilter@25b87e1b, org.springframework.web.filter.CorsFilter@679886ad, org.springframework.security.web.authentication.logout.LogoutFilter@2eb0932c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7e916dc2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7962a364, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@756030e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5625e7e1, org.springframework.security.web.access.ExceptionTranslationFilter@6fb51e17, org.springframework.security.web.access.intercept.AuthorizationFilter@53202b06]
-2025-06-01 17:08:46.087 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:08:46.100 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.048 seconds (process running for 7.755)
-2025-06-01 17:08:55.248 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:08:55.248 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:08:55.250 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-06-01 17:24:55.004 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:24:55.024 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:24:55.032 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:25:02.181 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 4712 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:25:02.183 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:25:02.185 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:25:03.143 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:25:03.222 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
-2025-06-01 17:25:04.479 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:25:04.499 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:25:04.499 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:25:04.587 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:25:04.587 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2302 ms
-2025-06-01 17:25:04.629 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:25:04.973 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:305d05a9-abcf-4983-a41d-7bbfb29aff6b user=SA
-2025-06-01 17:25:04.976 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:25:04.995 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:305d05a9-abcf-4983-a41d-7bbfb29aff6b'
-2025-06-01 17:25:05.300 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:25:05.301 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:25:05.302 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:25:05.408 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:305d05a9-abcf-4983-a41d-7bbfb29aff6b (H2 2.2)
-2025-06-01 17:25:05.426 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:25:05.487 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:25:05.492 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.033s)
-2025-06-01 17:25:05.502 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:25:05.567 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:25:05.577 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:25:05.606 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.012s)
-2025-06-01 17:25:05.740 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:25:05.841 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:25:05.897 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:25:06.275 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:25:06.353 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:25:07.479 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:25:07.506 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [created_at] in table [users]
-2025-06-01 17:25:07.507 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [created_at] in table [users]
-2025-06-01 17:25:07.507 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:25:07.510 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:25:07.512 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2025-06-01 17:25:07.525 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-06-01 17:25:07.546 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [created_at] in table [users]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.wallet.user.UserApplication.main(UserApplication.java:15)
-Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [created_at] in table [users]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 16 common frames omitted
-Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-validation: missing column [created_at] in table [users]
-	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.validateTable(AbstractSchemaValidator.java:145)
-	at org.hibernate.tool.schema.internal.GroupedSchemaValidatorImpl.validateTables(GroupedSchemaValidatorImpl.java:46)
-	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.performValidation(AbstractSchemaValidator.java:97)
-	at org.hibernate.tool.schema.internal.AbstractSchemaValidator.doValidation(AbstractSchemaValidator.java:75)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:295)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
-	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
-	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
-	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
-	... 20 common frames omitted
-2025-06-01 17:26:52.069 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 7120 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:26:52.071 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:26:52.073 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:26:52.958 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:26:53.012 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
-2025-06-01 17:26:54.161 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:26:54.178 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:26:54.179 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:26:54.269 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:26:54.270 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2103 ms
-2025-06-01 17:26:54.311 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:26:54.549 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:fd8c518f-5ef8-4655-80ab-f10f85234c4f user=SA
-2025-06-01 17:26:54.551 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:26:54.565 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:fd8c518f-5ef8-4655-80ab-f10f85234c4f'
-2025-06-01 17:26:54.792 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:26:54.793 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:26:54.793 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:26:54.859 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:fd8c518f-5ef8-4655-80ab-f10f85234c4f (H2 2.2)
-2025-06-01 17:26:54.866 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:26:54.937 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:26:54.942 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.058s)
-2025-06-01 17:26:54.951 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:26:54.986 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:26:54.992 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:26:55.005 [main] ERROR o.f.core.internal.command.DbMigrate - Migration of schema "PUBLIC" to version "1 - Create users table" failed! Please restore backups and roll back database and code!
-2025-06-01 17:26:55.013 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V1__Create_users_table.sql failed
--------------------------------------------
-SQL State  : 42001
-Error Code : 42001
-Message    : Syntax error in SQL statement "CREATE TABLE users (\000d\000a    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,\000d\000a    user_name VARCHAR(255) NOT NULL,\000d\000a    email VARCHAR(255) NOT NULL UNIQUE,\000d\000a    phone_number VARCHAR(255),\000d\000a    password VARCHAR(255) NOT NULL,\000d\000a\000d\000a[*])"; expected "identifier"; SQL statement:
-CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-) [42001-224]
-Location   : db/migration/V1__Create_users_table.sql (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes\db\migration\V1__Create_users_table.sql)
-Line       : 1
-Statement  : CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-)
-
-2025-06-01 17:26:55.014 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:26:55.019 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:26:55.023 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2025-06-01 17:26:55.045 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-06-01 17:26:55.082 [main] ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Migration V1__Create_users_table.sql failed
--------------------------------------------
-SQL State  : 42001
-Error Code : 42001
-Message    : Syntax error in SQL statement "CREATE TABLE users (\000d\000a    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,\000d\000a    user_name VARCHAR(255) NOT NULL,\000d\000a    email VARCHAR(255) NOT NULL UNIQUE,\000d\000a    phone_number VARCHAR(255),\000d\000a    password VARCHAR(255) NOT NULL,\000d\000a\000d\000a[*])"; expected "identifier"; SQL statement:
-CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-) [42001-224]
-Location   : db/migration/V1__Create_users_table.sql (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes\db\migration\V1__Create_users_table.sql)
-Line       : 1
-Statement  : CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-)
-
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.wallet.user.UserApplication.main(UserApplication.java:15)
-Caused by: org.flywaydb.core.internal.command.DbMigrate$FlywayMigrateException: Migration V1__Create_users_table.sql failed
--------------------------------------------
-SQL State  : 42001
-Error Code : 42001
-Message    : Syntax error in SQL statement "CREATE TABLE users (\000d\000a    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,\000d\000a    user_name VARCHAR(255) NOT NULL,\000d\000a    email VARCHAR(255) NOT NULL UNIQUE,\000d\000a    phone_number VARCHAR(255),\000d\000a    password VARCHAR(255) NOT NULL,\000d\000a\000d\000a[*])"; expected "identifier"; SQL statement:
-CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-) [42001-224]
-Location   : db/migration/V1__Create_users_table.sql (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes\db\migration\V1__Create_users_table.sql)
-Line       : 1
-Statement  : CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-)
-
-	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:382)
-	at org.flywaydb.core.internal.command.DbMigrate.lambda$applyMigrations$1(DbMigrate.java:272)
-	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55)
-	at org.flywaydb.core.internal.command.DbMigrate.applyMigrations(DbMigrate.java:271)
-	at org.flywaydb.core.internal.command.DbMigrate.migrateGroup(DbMigrate.java:244)
-	at org.flywaydb.core.internal.command.DbMigrate.lambda$migrateAll$0(DbMigrate.java:139)
-	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate$1.call(TableLockingExecutionTemplate.java:36)
-	at org.flywaydb.core.internal.jdbc.TransactionalExecutionTemplate.execute(TransactionalExecutionTemplate.java:55)
-	at org.flywaydb.core.internal.jdbc.TableLockingExecutionTemplate.execute(TableLockingExecutionTemplate.java:31)
-	at org.flywaydb.core.internal.database.base.Connection.lock(Connection.java:102)
-	at org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory.lock(JdbcTableSchemaHistory.java:144)
-	at org.flywaydb.core.internal.command.DbMigrate.migrateAll(DbMigrate.java:139)
-	at org.flywaydb.core.internal.command.DbMigrate.migrate(DbMigrate.java:97)
-	at org.flywaydb.core.Flyway.lambda$migrate$0(Flyway.java:188)
-	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:213)
-	at org.flywaydb.core.Flyway.migrate(Flyway.java:140)
-	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
-	... 18 common frames omitted
-Caused by: org.flywaydb.core.internal.sqlscript.FlywaySqlScriptException: Migration V1__Create_users_table.sql failed
--------------------------------------------
-SQL State  : 42001
-Error Code : 42001
-Message    : Syntax error in SQL statement "CREATE TABLE users (\000d\000a    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,\000d\000a    user_name VARCHAR(255) NOT NULL,\000d\000a    email VARCHAR(255) NOT NULL UNIQUE,\000d\000a    phone_number VARCHAR(255),\000d\000a    password VARCHAR(255) NOT NULL,\000d\000a\000d\000a[*])"; expected "identifier"; SQL statement:
-CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-) [42001-224]
-Location   : db/migration/V1__Create_users_table.sql (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes\db\migration\V1__Create_users_table.sql)
-Line       : 1
-Statement  : CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-)
-
-	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.handleException(DefaultSqlScriptExecutor.java:267)
-	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:222)
-	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.execute(DefaultSqlScriptExecutor.java:126)
-	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.executeOnce(SqlMigrationExecutor.java:68)
-	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.lambda$execute$0(SqlMigrationExecutor.java:57)
-	at org.flywaydb.core.internal.database.DefaultExecutionStrategy.execute(DefaultExecutionStrategy.java:27)
-	at org.flywaydb.core.internal.resolver.sql.SqlMigrationExecutor.execute(SqlMigrationExecutor.java:56)
-	at org.flywaydb.core.internal.command.DbMigrate.doMigrateGroup(DbMigrate.java:374)
-	... 36 common frames omitted
-Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE users (\000d\000a    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,\000d\000a    user_name VARCHAR(255) NOT NULL,\000d\000a    email VARCHAR(255) NOT NULL UNIQUE,\000d\000a    phone_number VARCHAR(255),\000d\000a    password VARCHAR(255) NOT NULL,\000d\000a\000d\000a[*])"; expected "identifier"; SQL statement:
-CREATE TABLE users (
-    id BIGINT GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-    user_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    phone_number VARCHAR(255),
-    password VARCHAR(255) NOT NULL,
-
-) [42001-224]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
-	at org.h2.message.DbException.getSyntaxError(DbException.java:261)
-	at org.h2.command.Parser.readIdentifier(Parser.java:5533)
-	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8994)
-	at org.h2.command.Parser.parseCreateTable(Parser.java:8939)
-	at org.h2.command.Parser.parseCreate(Parser.java:6404)
-	at org.h2.command.Parser.parsePrepared(Parser.java:666)
-	at org.h2.command.Parser.parse(Parser.java:592)
-	at org.h2.command.Parser.parse(Parser.java:564)
-	at org.h2.command.Parser.prepareCommand(Parser.java:483)
-	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
-	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
-	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
-	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
-	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
-	at org.flywaydb.core.internal.jdbc.JdbcTemplate.executeStatement(JdbcTemplate.java:201)
-	at org.flywaydb.core.internal.sqlscript.ParsedSqlStatement.execute(ParsedSqlStatement.java:95)
-	at org.flywaydb.core.internal.sqlscript.DefaultSqlScriptExecutor.executeStatement(DefaultSqlScriptExecutor.java:210)
-	... 42 common frames omitted
-2025-06-01 17:27:34.569 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 4092 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:27:34.571 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:27:34.572 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:27:35.460 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:27:35.520 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interface.
-2025-06-01 17:27:36.702 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:27:36.720 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:27:36.720 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:27:36.813 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:27:36.814 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2147 ms
-2025-06-01 17:27:36.867 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:27:37.122 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:aac27cbd-5093-4e25-887a-f3c9300e5ba3 user=SA
-2025-06-01 17:27:37.124 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:27:37.139 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:aac27cbd-5093-4e25-887a-f3c9300e5ba3'
-2025-06-01 17:27:37.329 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:27:37.329 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:27:37.329 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:27:37.392 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:aac27cbd-5093-4e25-887a-f3c9300e5ba3 (H2 2.2)
-2025-06-01 17:27:37.400 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:27:37.441 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:27:37.444 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.030s)
-2025-06-01 17:27:37.451 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:27:37.485 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:27:37.491 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:27:37.510 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 17:27:37.536 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.028s)
-2025-06-01 17:27:37.649 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:27:37.726 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:27:37.781 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:27:38.084 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:27:38.141 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:27:39.149 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:27:39.171 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:27:39.666 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:27:39.708 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 2f9b8177-f4a1-45a2-86a0-52c619414811
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 17:27:40.080 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a4388f1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3687b83c, org.springframework.security.web.context.SecurityContextHolderFilter@562ec518, org.springframework.web.filter.CorsFilter@4cbd17b3, org.springframework.security.web.authentication.logout.LogoutFilter@20040c6e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@29b2a94c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b1ad751, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d0e6424, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a5c6009, org.springframework.security.web.access.ExceptionTranslationFilter@4199761d, org.springframework.security.web.access.intercept.AuthorizationFilter@5cdf61d]
-2025-06-01 17:27:40.487 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:27:40.504 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 6.722 seconds (process running for 7.395)
-2025-06-01 17:27:53.741 [http-nio-8081-exec-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:27:53.742 [http-nio-8081-exec-7] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:27:53.745 [http-nio-8081-exec-7] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2025-06-01 17:29:19.226 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:29:19.229 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:29:19.232 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:29:22.453 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 12196 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:29:22.454 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:29:22.455 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:29:23.505 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:29:23.564 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interface.
-2025-06-01 17:29:24.893 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:29:24.917 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:29:24.917 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:29:25.020 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:29:25.021 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2472 ms
-2025-06-01 17:29:25.062 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:29:25.376 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 17:29:25.380 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:29:25.396 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 17:29:25.648 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:29:25.648 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:29:25.648 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:29:25.718 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 17:29:25.725 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:29:25.758 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:29:25.763 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.022s)
-2025-06-01 17:29:25.772 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:29:25.818 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:29:25.826 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:29:25.851 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 17:29:25.900 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.051s)
-2025-06-01 17:29:26.047 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:29:26.172 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:29:26.237 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:29:26.561 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:29:26.637 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:29:27.686 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:29:27.726 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:29:28.325 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:29:28.371 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 3471bb91-2fb0-4d82-8f14-4ccd39c1f17c
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 17:29:28.824 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29b2a94c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@108d59b6, org.springframework.security.web.context.SecurityContextHolderFilter@4199761d, org.springframework.web.filter.CorsFilter@38d9c9c4, org.springframework.security.web.authentication.logout.LogoutFilter@3a22d69f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@615b1baf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3cd758be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@562ec518, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a4388f1, org.springframework.security.web.access.ExceptionTranslationFilter@5fa3df, org.springframework.security.web.access.intercept.AuthorizationFilter@13da6bc9]
-2025-06-01 17:29:29.294 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:29:29.306 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.667 seconds (process running for 8.406)
-2025-06-01 17:30:03.969 [http-nio-8081-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:30:03.969 [http-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:30:03.971 [http-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-06-01 17:31:20.888 [http-nio-8081-exec-4] INFO  c.w.user.controller.UserController - Received request to create user with email: ram22@gmail.com
-2025-06-01 17:31:20.889 [http-nio-8081-exec-4] INFO  c.w.user.service.impl.UserService - Attempting to create user with email: ram22@gmail.com
-2025-06-01 17:31:21.043 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.created_by,u1_0.email,u1_0.password,u1_0.phone_number,u1_0.updated_at,u1_0.updated_by,u1_0.user_name from users u1_0 where u1_0.email=? or u1_0.phone_number=?
-2025-06-01 17:31:21.212 [http-nio-8081-exec-4] DEBUG org.hibernate.SQL - insert into users (created_at,created_by,email,password,phone_number,updated_at,updated_by,user_name,id) values (?,?,?,?,?,?,?,?,default)
-2025-06-01 17:31:21.233 [http-nio-8081-exec-4] INFO  c.w.user.service.impl.UserService - User created successfully with ID: 1
-2025-06-01 17:31:21.233 [http-nio-8081-exec-4] INFO  c.w.user.controller.UserController - User creation request processed for email: ram22@gmail.com
-2025-06-01 17:32:41.971 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:32:41.974 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:32:41.976 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:32:47.485 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 8432 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:32:47.487 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:32:47.488 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:32:48.496 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:32:48.556 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
-2025-06-01 17:32:49.868 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:32:49.885 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:32:49.885 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:32:49.965 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:32:49.966 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2379 ms
-2025-06-01 17:32:50.012 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:32:50.367 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 17:32:50.370 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:32:50.393 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 17:32:50.679 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:32:50.679 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:32:50.679 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:32:50.749 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 17:32:50.759 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:32:50.799 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:32:50.805 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.027s)
-2025-06-01 17:32:50.818 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:32:50.869 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:32:50.879 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:32:50.907 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 17:32:50.949 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.045s)
-2025-06-01 17:32:51.111 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:32:51.210 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:32:51.266 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:32:51.633 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:32:51.705 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:32:52.796 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:32:52.826 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:32:53.461 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:32:53.527 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: dee49f62-8957-4d7e-8cce-4d47c7826e41
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 17:32:54.052 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@65dafe50, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29b2a94c, org.springframework.security.web.context.SecurityContextHolderFilter@3b1a3125, org.springframework.web.filter.CorsFilter@108d59b6, org.springframework.security.web.authentication.logout.LogoutFilter@7ff40324, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3d5e3f58, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ca564aa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cd758be, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38d9c9c4, org.springframework.security.web.access.ExceptionTranslationFilter@6fb2b972, org.springframework.security.web.access.intercept.AuthorizationFilter@31beb0d0]
-2025-06-01 17:32:54.607 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:32:54.620 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.963 seconds (process running for 8.661)
-2025-06-01 17:32:58.175 [http-nio-8081-exec-5] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:32:58.176 [http-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:32:58.178 [http-nio-8081-exec-5] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-06-01 17:32:58.429 [http-nio-8081-exec-5] INFO  c.w.user.controller.UserController - Received request to create user with email: ram22@gmail.com
-2025-06-01 17:32:58.429 [http-nio-8081-exec-5] INFO  c.w.user.service.impl.UserService - Attempting to create user with email: ram22@gmail.com
-2025-06-01 17:32:58.561 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.created_by,u1_0.email,u1_0.password,u1_0.phone_number,u1_0.updated_at,u1_0.updated_by,u1_0.user_name from users u1_0 where u1_0.email=? or u1_0.phone_number=?
-2025-06-01 17:32:58.733 [http-nio-8081-exec-5] DEBUG org.hibernate.SQL - insert into users (created_at,created_by,email,password,phone_number,updated_at,updated_by,user_name,id) values (?,?,?,?,?,?,?,?,default)
-2025-06-01 17:32:58.759 [http-nio-8081-exec-5] INFO  c.w.user.service.impl.UserService - User created successfully with ID: 1
-2025-06-01 17:32:58.759 [http-nio-8081-exec-5] INFO  c.w.user.controller.UserController - User creation request processed for email: ram22@gmail.com
-2025-06-01 17:33:57.924 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:33:57.926 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 17:33:57.928 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 17:34:03.593 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 5000 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 17:34:03.595 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 17:34:03.597 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 17:34:04.608 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 17:34:04.678 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
-2025-06-01 17:34:05.953 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 17:34:05.967 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 17:34:05.968 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 17:34:06.049 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 17:34:06.050 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2360 ms
-2025-06-01 17:34:06.099 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 17:34:06.384 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 17:34:06.388 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 17:34:06.404 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 17:34:06.653 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 17:34:06.654 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 17:34:06.654 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 17:34:06.734 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 17:34:06.744 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 17:34:06.780 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 17:34:06.785 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.022s)
-2025-06-01 17:34:06.795 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 17:34:06.838 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 17:34:06.846 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 17:34:06.872 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 17:34:06.907 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.040s)
-2025-06-01 17:34:07.033 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 17:34:07.129 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 17:34:07.183 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 17:34:07.547 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 17:34:07.621 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 17:34:08.593 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 17:34:08.631 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 17:34:09.259 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 17:34:09.305 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 1c04c2d0-5131-4a96-ae9d-09468d459c12
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 17:34:09.782 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3687b83c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4cbd17b3, org.springframework.security.web.context.SecurityContextHolderFilter@5c8d685e, org.springframework.web.filter.CorsFilter@3a5c6009, org.springframework.security.web.authentication.logout.LogoutFilter@cbea0df, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@108d59b6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d0e6424, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6da86e98, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c4e63b3, org.springframework.security.web.access.ExceptionTranslationFilter@3ca564aa, org.springframework.security.web.access.intercept.AuthorizationFilter@4509414e]
-2025-06-01 17:34:10.307 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 17:34:10.320 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.551 seconds (process running for 8.345)
-2025-06-01 17:34:15.607 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 17:34:15.607 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 17:34:15.609 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2025-06-01 17:34:15.864 [http-nio-8081-exec-1] INFO  c.w.user.controller.UserController - Received request to create user with email: ram22@gmail.com
-2025-06-01 17:34:15.864 [http-nio-8081-exec-1] INFO  c.w.user.service.impl.UserService - Attempting to create user with email: ram22@gmail.com
-2025-06-01 17:34:16.097 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.created_by,u1_0.email,u1_0.password,u1_0.phone_number,u1_0.updated_at,u1_0.updated_by,u1_0.user_name from users u1_0 where u1_0.email=? or u1_0.phone_number=?
-2025-06-01 17:34:16.276 [http-nio-8081-exec-1] DEBUG org.hibernate.SQL - insert into users (created_at,created_by,email,password,phone_number,user_name,id) values (?,?,?,?,?,?,default)
-2025-06-01 17:34:16.309 [http-nio-8081-exec-1] INFO  c.w.user.service.impl.UserService - User created successfully with ID: 1
-2025-06-01 17:34:16.309 [http-nio-8081-exec-1] INFO  c.w.user.controller.UserController - User creation request processed for email: ram22@gmail.com
-2025-06-01 18:00:08.958 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:00:08.973 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 18:00:08.979 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 18:00:17.559 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 17308 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:00:17.561 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:00:17.563 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:00:18.651 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:00:18.722 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
-2025-06-01 18:00:19.035 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
-2025-06-01 18:00:19.047 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-06-01 18:00:19.076 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.wallet.user.UserApplication.main(UserApplication.java:15)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.webmvc.ui.SwaggerConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1676)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/web/servlet/resource/LiteWebJarsResourceResolver
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
-	... 33 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.resource.LiteWebJarsResourceResolver
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	... 46 common frames omitted
-2025-06-01 18:04:08.457 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 272 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:04:08.459 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:04:08.460 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:04:09.593 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:04:09.671 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
-2025-06-01 18:04:11.148 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 18:04:11.168 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 18:04:11.168 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 18:04:11.267 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 18:04:11.268 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2709 ms
-2025-06-01 18:04:11.311 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 18:04:11.645 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 18:04:11.648 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 18:04:11.666 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 18:04:11.911 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 18:04:11.912 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 18:04:11.912 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 18:04:11.973 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 18:04:11.980 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 18:04:12.016 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 18:04:12.020 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.025s)
-2025-06-01 18:04:12.031 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 18:04:12.069 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 18:04:12.075 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 18:04:12.098 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 18:04:12.135 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.037s)
-2025-06-01 18:04:12.284 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 18:04:12.393 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 18:04:12.448 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 18:04:12.767 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 18:04:12.838 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 18:04:13.886 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 18:04:13.911 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:04:14.407 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 18:04:14.453 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: d46af62f-f798-476c-b663-d6161ccaddee
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 18:04:14.911 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53ce27fa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7ceb7a60, org.springframework.security.web.context.SecurityContextHolderFilter@1488d1c, org.springframework.web.filter.CorsFilter@1ab780fd, org.springframework.security.web.authentication.logout.LogoutFilter@76929266, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1267adbe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@578ac0be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4250b0c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b8683b8, org.springframework.security.web.access.ExceptionTranslationFilter@7c0ecdbf, org.springframework.security.web.access.intercept.AuthorizationFilter@642b2176]
-2025-06-01 18:04:15.495 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 18:04:15.508 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.925 seconds (process running for 9.122)
-2025-06-01 18:04:28.853 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 18:04:28.853 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 18:04:28.855 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-06-01 18:06:41.249 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:06:41.251 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 18:06:41.254 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 18:06:47.872 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 12396 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:06:47.874 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:06:47.875 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:06:48.947 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:06:49.023 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 1 JPA repository interface.
-2025-06-01 18:06:50.322 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 18:06:50.345 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 18:06:50.345 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 18:06:50.432 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 18:06:50.432 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2461 ms
-2025-06-01 18:06:50.484 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 18:06:50.825 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 18:06:50.829 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 18:06:50.847 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 18:06:51.164 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 18:06:51.164 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 18:06:51.164 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 18:06:51.237 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 18:06:51.246 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 18:06:51.291 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 18:06:51.296 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.031s)
-2025-06-01 18:06:51.305 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 18:06:51.347 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 18:06:51.354 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 18:06:51.383 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 18:06:51.433 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.051s)
-2025-06-01 18:06:51.577 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 18:06:51.675 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 18:06:51.732 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 18:06:52.080 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 18:06:52.134 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 18:06:53.021 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 18:06:53.042 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:06:53.516 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 18:06:53.559 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 014a1431-17ac-4ae3-aa50-1f50c425b74f
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 18:06:54.067 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@495598c5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e4ac3f5, org.springframework.security.web.context.SecurityContextHolderFilter@7b5e5fa, org.springframework.web.filter.CorsFilter@48dc06a9, org.springframework.security.web.authentication.logout.LogoutFilter@798d8247, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7ceb7a60, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3420547, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44d36b56, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1798c749, org.springframework.security.web.access.ExceptionTranslationFilter@b21cbbf, org.springframework.security.web.access.intercept.AuthorizationFilter@66011fbc]
-2025-06-01 18:06:54.792 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 18:06:54.806 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 7.821 seconds (process running for 8.513)
-2025-06-01 18:07:05.114 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 18:07:05.114 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 18:07:05.116 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-06-01 18:08:48.644 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:08:48.650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 18:08:48.656 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 18:08:57.480 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 6732 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:08:57.483 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:08:57.484 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:08:59.055 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:08:59.116 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
-2025-06-01 18:09:00.500 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 18:09:00.516 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 18:09:00.516 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 18:09:00.614 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 18:09:00.615 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2994 ms
-2025-06-01 18:09:00.660 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 18:09:01.008 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 18:09:01.010 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 18:09:01.031 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 18:09:01.295 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 18:09:01.295 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 18:09:01.295 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 18:09:01.372 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 18:09:01.381 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 18:09:01.437 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 18:09:01.442 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.041s)
-2025-06-01 18:09:01.451 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 18:09:01.501 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 18:09:01.512 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 18:09:01.559 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 18:09:01.612 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.060s)
-2025-06-01 18:09:01.770 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 18:09:01.875 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 18:09:01.942 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 18:09:02.339 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 18:09:02.418 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 18:09:03.451 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 18:09:03.474 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:09:04.058 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 18:09:04.128 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: d6cab7fa-46f3-4926-a5be-4ff64e38980c
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 18:09:04.699 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7aa5292d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25291901, org.springframework.security.web.context.SecurityContextHolderFilter@2a23c061, org.springframework.web.filter.CorsFilter@a6d4547, org.springframework.security.web.authentication.logout.LogoutFilter@38224635, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6137dc84, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@642b2176, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3985175e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@701996e9, org.springframework.security.web.access.ExceptionTranslationFilter@69c7eafd, org.springframework.security.web.access.intercept.AuthorizationFilter@10545d02]
-2025-06-01 18:09:05.487 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 18:09:05.501 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 8.954 seconds (process running for 9.708)
-2025-06-01 18:09:12.294 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 18:09:12.294 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 18:09:12.296 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-06-01 18:14:37.028 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:14:37.030 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 18:14:37.033 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 18:22:17.086 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 15592 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:22:17.088 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:22:17.089 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:22:18.457 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:22:18.538 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interface.
-2025-06-01 18:22:18.857 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
-2025-06-01 18:22:18.872 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-06-01 18:22:18.914 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.wallet.user.UserApplication.main(UserApplication.java:17)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.webmvc.ui.SwaggerConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1676)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/web/servlet/resource/LiteWebJarsResourceResolver
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
-	... 33 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.resource.LiteWebJarsResourceResolver
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	... 46 common frames omitted
-2025-06-01 18:23:54.230 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 8092 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:23:54.232 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:23:54.234 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:23:55.427 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:23:55.509 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interface.
-2025-06-01 18:23:55.866 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
-2025-06-01 18:23:55.879 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-06-01 18:23:55.911 [main] ERROR o.s.boot.SpringApplication - Application run failed
-java.lang.IllegalStateException: Error processing condition on org.springdoc.webmvc.ui.SwaggerConfig.springWebProvider
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60)
-	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144)
-	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:428)
-	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
-	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
-	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
-	at com.wallet.user.UserApplication.main(UserApplication.java:17)
-Caused by: java.lang.IllegalStateException: Failed to introspect Class [org.springdoc.webmvc.ui.SwaggerConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@76ed5528]
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483)
-	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360)
-	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750)
-	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1740)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1676)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183)
-	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158)
-	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47)
-	... 17 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/web/servlet/resource/LiteWebJarsResourceResolver
-	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
-	at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
-	at java.base/java.security.SecureClassLoader.defineClass(SecureClassLoader.java:150)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.defineClass(BuiltinClassLoader.java:862)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.findClassOnClassPathOrNull(BuiltinClassLoader.java:760)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClassOrNull(BuiltinClassLoader.java:681)
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:639)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	at java.base/java.lang.Class.getDeclaredMethods0(Native Method)
-	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3578)
-	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2676)
-	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465)
-	... 33 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.web.servlet.resource.LiteWebJarsResourceResolver
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
-	... 46 common frames omitted
-2025-06-01 18:48:11.887 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 14224 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:48:11.892 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:48:11.895 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:48:13.529 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:48:13.602 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
-2025-06-01 18:48:14.616 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 18:48:14.643 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 18:48:14.644 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 18:48:14.757 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 18:48:14.757 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2718 ms
-2025-06-01 18:48:14.807 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 18:48:15.268 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 18:48:15.270 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 18:48:15.287 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 18:48:15.609 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 18:48:15.610 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 18:48:15.610 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 18:48:15.694 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 18:48:15.705 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 18:48:15.756 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 18:48:15.761 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.032s)
-2025-06-01 18:48:15.774 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 18:48:15.820 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 18:48:15.828 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 18:48:15.865 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 18:48:15.918 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.060s)
-2025-06-01 18:48:16.085 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 18:48:16.205 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 18:48:16.277 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 18:48:16.588 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 18:48:16.663 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 18:48:17.644 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 18:48:17.669 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:48:18.290 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 18:48:18.344 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: cc8a7f32-aef2-4e95-a7b6-73eb2ddf90c6
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 18:48:19.455 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@403b7be3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a5d9ede, org.springframework.security.web.context.SecurityContextHolderFilter@30a99b85, org.springframework.web.filter.CorsFilter@39e91bda, org.springframework.security.web.authentication.logout.LogoutFilter@4512f5f1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7bc239db, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20bf7206, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cb939d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c3f81ef, org.springframework.security.web.access.ExceptionTranslationFilter@7a8e484b, org.springframework.security.web.access.intercept.AuthorizationFilter@adbc3bc]
-2025-06-01 18:48:20.211 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 18:48:20.228 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 9.251 seconds (process running for 10.059)
-2025-06-01 18:48:30.738 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 18:48:30.739 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 18:48:30.741 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-06-01 18:48:36.431 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:48:36.433 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 18:48:36.437 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2025-06-01 18:48:39.899 [main] INFO  com.wallet.user.UserApplication - Starting UserApplication using Java 21.0.1 with PID 16424 (D:\Nerd\digital-wallet-p2p\digital-wallet-p2p\user-service\target\classes started by ramju in D:\Nerd\digital-wallet-p2p\digital-wallet-p2p)
-2025-06-01 18:48:39.901 [main] DEBUG com.wallet.user.UserApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-06-01 18:48:39.902 [main] INFO  com.wallet.user.UserApplication - No active profile set, falling back to 1 default profile: "default"
-2025-06-01 18:48:41.497 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-01 18:48:41.574 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 1 JPA repository interface.
-2025-06-01 18:48:42.523 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2025-06-01 18:48:42.542 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2025-06-01 18:48:42.542 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-06-01 18:48:42.631 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2025-06-01 18:48:42.631 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2603 ms
-2025-06-01 18:48:42.679 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-06-01 18:48:43.025 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:userdb user=SA
-2025-06-01 18:48:43.028 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-06-01 18:48:43.049 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:userdb'
-2025-06-01 18:48:43.321 [main] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.22.3 by Redgate
-2025-06-01 18:48:43.321 [main] INFO  o.f.c.i.license.VersionPrinter - See release notes here: https://rd.gt/416ObMi
-2025-06-01 18:48:43.321 [main] INFO  o.f.c.i.license.VersionPrinter - 
-2025-06-01 18:48:43.401 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:mem:userdb (H2 2.2)
-2025-06-01 18:48:43.412 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
-2025-06-01 18:48:43.458 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-06-01 18:48:43.463 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.029s)
-2025-06-01 18:48:43.473 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-06-01 18:48:43.516 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-2025-06-01 18:48:43.523 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - Create users table"
-2025-06-01 18:48:43.559 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "2 - add auditing columns to users table"
-2025-06-01 18:48:43.606 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.051s)
-2025-06-01 18:48:43.807 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-01 18:48:43.923 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-06-01 18:48:43.996 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-06-01 18:48:44.384 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-01 18:48:44.467 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-01 18:48:45.406 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-01 18:48:45.428 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:48:45.961 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-01 18:48:46.012 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
-
-Using generated security password: 502cd72c-bb53-4810-8193-1442e080d9f0
-
-This generated password is for development use only. Your security configuration must be updated before running your application in production.
-
-2025-06-01 18:48:47.237 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@34f3c920, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@73f0b216, org.springframework.security.web.context.SecurityContextHolderFilter@4ed90b04, org.springframework.web.filter.CorsFilter@73bd146c, org.springframework.security.web.authentication.logout.LogoutFilter@294c36b9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@22cca101, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7dd92a36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@531ed68e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1ea78c72, org.springframework.security.web.access.ExceptionTranslationFilter@4e9d1119, org.springframework.security.web.access.intercept.AuthorizationFilter@5f662dd]
-2025-06-01 18:48:48.006 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
-2025-06-01 18:48:48.021 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 9.016 seconds (process running for 9.809)
-2025-06-01 18:48:52.457 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-01 18:48:52.457 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-06-01 18:48:52.459 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
-2025-06-01 18:49:37.002 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-01 18:49:37.005 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2025-06-01 18:49:37.009 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-06-02 22:15:16.697 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5e38329d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60be9fdf, org.springframework.security.web.context.SecurityContextHolderFilter@69b436a7, org.springframework.web.filter.CorsFilter@7d816d32, org.springframework.security.web.authentication.logout.LogoutFilter@5d72da0b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7c08461b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1d2aa638, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f08e6d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f5ad6b7, org.springframework.security.web.access.ExceptionTranslationFilter@1134a934, org.springframework.security.web.access.intercept.AuthorizationFilter@7d018c58]
+2025-06-02 22:15:17.322 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2025-06-02 22:15:17.339 [main] INFO  com.wallet.user.UserApplication - Started UserApplication in 9.897 seconds (process running for 10.699)
+2025-06-02 22:15:18.627 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-02 22:15:18.627 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-06-02 22:15:18.629 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-06-02 22:15:19.388 [http-nio-8081-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 380 ms
