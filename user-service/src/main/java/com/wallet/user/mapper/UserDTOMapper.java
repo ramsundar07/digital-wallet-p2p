@@ -21,6 +21,7 @@ public class UserDTOMapper {
      * @param userResponseDTO
      */
     public static void mapToUserResponseDto(User user, UserResponseDTO userResponseDTO){
+        userResponseDTO.setId(user.getId());
         userResponseDTO.setUserName(user.getUserName());
         userResponseDTO.setEmail(user.getEmail());
         userResponseDTO.setPhoneNumber(user.getPhoneNumber());

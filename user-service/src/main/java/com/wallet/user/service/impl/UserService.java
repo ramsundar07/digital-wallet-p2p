@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,7 @@ public class UserService implements IUserService {
      * @param userRequestDTO
      * @return
      */
+    @Transactional
     @Override
     public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
         logger.info("Attempting to create user with email: {}", userRequestDTO.getEmail());
@@ -56,6 +58,7 @@ public class UserService implements IUserService {
      * @param email
      * @return
      */
+    @Transactional(readOnly = true)
     @Override
     public UserResponseDTO fetchUserByEmail(String email) {
         logger.debug("Fetching user by email: {}", email);
@@ -72,6 +75,7 @@ public class UserService implements IUserService {
      * @param currentUserId
      * @return
      */
+    @Transactional(readOnly = true)
     @Override
     public UserResponseDTO getUserById(Long currentUserId) {
         logger.debug("Fetching user by ID: {}", currentUserId);
@@ -88,6 +92,7 @@ public class UserService implements IUserService {
      * @param currentUserId
      * @return
      */
+    @Transactional
     @Override
     public UserResponseDTO updateUser(Long currentUserId, UserRequestDTO requestDTO) {
         logger.info("Attempting to update user with ID: {}", currentUserId);
@@ -118,6 +123,7 @@ public class UserService implements IUserService {
     /**
      * @param currentUserId
      */
+    @Transactional
     @Override
     public void deleteUser(Long currentUserId) {
         logger.info("Attempting to delete user with ID: {}", currentUserId);
@@ -129,6 +135,7 @@ public class UserService implements IUserService {
 
         logger.info("User with ID {} deleted successfully.", currentUserId);
     }
+    @Transactional(readOnly = true)
     @Override
     public List<UserResponseDTO> getAllUsers(){
         logger.debug("Fetching all users.");

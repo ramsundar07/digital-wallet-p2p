@@ -10,7 +10,7 @@
     <groupId>com.wallet</groupId>
     <artifactId>user-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>common-dtos</name>
+    <name>user-service</name>
     <description>User Service for Digital Wallet P2P</description>
     <packaging>jar</packaging>
     <dependencies>

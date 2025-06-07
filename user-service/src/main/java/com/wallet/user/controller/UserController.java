@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -21,6 +22,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -65,6 +67,7 @@ public class UserController {
                             )
                     })
     })
+
     @PostMapping
     public ResponseEntity<ResponseDTO<UserResponseDTO>> createUser(@RequestBody @Valid UserRequestDTO userRequestDTO) {
         logger.info("Received request to create user with email: {}", userRequestDTO.getEmail());
@@ -98,7 +101,8 @@ public class UserController {
                             )
                     })
     })
-    @GetMapping("/by-email")
+
+    @GetMapping
     public ResponseEntity<UserResponseDTO> fetchUserByEmail(@RequestParam @NotEmpty(message = "Email can't be empty") @Email( message = "Email id is not Valid") String email){
         logger.info("Received request to fetch user by email: {}", email);
         UserResponseDTO userResponseDTO = userService.fetchUserByEmail(email);
@@ -130,6 +134,7 @@ public class UserController {
                             )
                     })
     })
+
     @GetMapping("/me")
     public ResponseEntity<UserResponseDTO> getMyProfile() {
         // Placeholder for obtaining authenticated user ID.
@@ -172,6 +177,7 @@ public class UserController {
                             )
                     })
     })
+
     @PutMapping("/me")
     public ResponseEntity<ResponseDTO<UserResponseDTO>> updateMyProfile(
             @RequestBody UserRequestDTO requestDTO) {
@@ -209,6 +215,7 @@ public class UserController {
                             )
                     })
     })
+
     @DeleteMapping("/me")
     public ResponseEntity<ResponseDTO<Void>> deleteMyAccount() {
         // Placeholder for obtaining authenticated user ID.
@@ -239,6 +246,7 @@ public class UserController {
                             )
                     })
     })
+
     @GetMapping
     public ResponseEntity<ResponseDTO<List<UserResponseDTO>>> getAllUsers() {
         logger.info("Received request to fetch all users."); // ADDED: Logging

@@ -23,6 +23,7 @@
     <modules>
         <module>common-dtos</module>
         <module>user-service</module>
+        <module>account-service</module>
     </modules>
 
     <dependencyManagement>
