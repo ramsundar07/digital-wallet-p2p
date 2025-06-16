@@ -22,6 +22,14 @@ spring:
       enabled: true
       location: classpath:db/migration
       baseline-on-migrate: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka # URL of your Eureka Discovery Server
+    instance:
+      hostname: localhost # Or the container name if running in Docker network
+      instance-id: ${spring.application.name}:${instance_id:${random.value}} # Unique instance ID for Eureka
+
 logging:
   level:
     root: INFO # Default log level for all loggers. Logs at INFO, WARN, ERROR, FATAL.

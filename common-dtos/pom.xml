@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.wallet</groupId>
     <artifactId>common-dtos</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>common-dtos</name>
     <description>Shared DTOs for Digital Wallet P2P</description>
     <packaging>jar</packaging>

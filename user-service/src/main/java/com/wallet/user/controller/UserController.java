@@ -102,12 +102,12 @@ public class UserController {
                     })
     })
 
-    @GetMapping
-    public ResponseEntity<UserResponseDTO> fetchUserByEmail(@RequestParam @NotEmpty(message = "Email can't be empty") @Email( message = "Email id is not Valid") String email){
+    @GetMapping("/fetchByEmail")
+    public ResponseEntity<ResponseDTO<UserResponseDTO>> fetchUserByEmail(@RequestParam @NotEmpty(message = "Email can't be empty") @Email( message = "Email id is not Valid") String email){
         logger.info("Received request to fetch user by email: {}", email);
         UserResponseDTO userResponseDTO = userService.fetchUserByEmail(email);
         logger.info("User fetched by email: {}", email);
-        return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDTO<>(UserConstants.STATUS_200,UserConstants.MESSAGE_200,userResponseDTO));
     }
 
     @Operation(
@@ -136,7 +136,7 @@ public class UserController {
     })
 
     @GetMapping("/me")
-    public ResponseEntity<UserResponseDTO> getMyProfile() {
+    public ResponseEntity<ResponseDTO<UserResponseDTO>> getMyProfile() {
         // Placeholder for obtaining authenticated user ID.
         // In a real application, this would come from Spring Security's Authentication object.
         // Example: Long currentUserId = ((MyCustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
@@ -144,7 +144,7 @@ public class UserController {
         logger.info("Received request to get profile for current user ID: {}", currentUserId);
         UserResponseDTO userResponseDTO =  userService.getUserById(currentUserId);
         logger.info("Profile retrieved for user ID: {}", currentUserId);
-        return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDTO<>(UserConstants.STATUS_200,UserConstants.MESSAGE_200,userResponseDTO));
     }
 
     @Operation(
