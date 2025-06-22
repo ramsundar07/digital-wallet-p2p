@@ -22,7 +22,7 @@ public class UserDTOMapper {
      */
     public static void mapToUserResponseDto(User user, UserResponseDTO userResponseDTO){
         userResponseDTO.setId(user.getId());
-        userResponseDTO.setUserName(user.getUserName());
+        userResponseDTO.setUserName(user.getUsername());
         userResponseDTO.setEmail(user.getEmail());
         userResponseDTO.setPhoneNumber(user.getPhoneNumber());
     }

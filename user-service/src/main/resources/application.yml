@@ -29,15 +29,21 @@ eureka:
     instance:
       hostname: localhost # Or the container name if running in Docker network
       instance-id: ${spring.application.name}:${instance_id:${random.value}} # Unique instance ID for Eureka
-
+jwt:
+  private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCadkQFvNgfDdoCTL40EQo5FnXhqg5nH5Mn7TDvbVrTJ7UmoxYor+t8Z/PzF09nYboi1gQsg0kNoD/m+x44sIGFpyTKHZ/uQROBjvNwLXj9DQPoP/qF3tCRED3JZ0++SwQig/TnFaZ6HjtPiMSuhMn4Z5dvy45Pp4qvTg09m1TjDmJqhm84feAfQO8V3ohlVsm4Y8LN2mhmNGoWWeQN+7Qtay9Mfo1DfOWJ7AkxdAAiq/gbCfNegG8Q7ka5xn5X9pdFBkYTT7hxisFAkkER5ebxzvV/+1ZDrEE5wKGztyowVuDrLgqyVf9bmnydnfvsGzC2lwwqQMz96UMvX5pYDj8FAgMBAAECggEAEtdkzkdeHJGhu4CVff/rHZIYEI4gIiOnnWnxO299Mf8ouX0QzadB5CPBDfDUuoFhBXFSQoTEM0GOMfSFV/ht4DoGgpIRCWzOPpJLry4Y0VNWW+z79/r5OYy/4LK1tzpq13P9und5XnGUHgxKo5gmk+K9BgHQSvaes+ojMtXhCa4tuODbmt1lpJd8GppHOW2LSdWb6/QZB0ONnmllNInbUJYI4hp5VigLPg9GbuYSeqipcTdC9Hx82N8UrViuLWWOxmvLpvkw0JqLmBLcKF3r2Ajb1v6vxajyQqK1vrZ/s0WctwDBtfCX9DZUR5TRRA20T7tYHSmotej2nXV3egZ7SQKBgQDAknv6mAyxLnWd9f/UG28NOdTgqY25SS1+YbDdx65ZCgojHVj+DuL87q/NBhqa7fg3LP69L5etvLzg0M3lKBUiJV4jbsc8ZkUlO+29/srMXW+KbMg5N0sf+fSS0bigCIjl7kCgaMdSxc/Lu8sBZXZG9+DSFU1vTlpxoKDAK6KqjQKBgQDNVlxvXimUY88Mn9yYpW819Bwi/pFbpE4/bEmsF4fTpIRIKrdSdCF1EGQUdImiSEmoe/SMxgcUDID1LONySNvvoN4NPiL2XM6W7kCDQm7w+6woTb6xeNGATpGUdhW+PYGXBkNVh7ZWi6W8lNZzM2jJQnk6XKAcNFoNRmckrOHEWQKBgFfef1PJLYFrgZ+iMCnImtOeH9SjiVeSXH/ec6W/B375ZcbADWtfv5NKFk2nC1zGWQxUK6iHnt5X0JeEr25w67O4+UuRsLeOst5aihC3wjGeMNco6/Ovl0fv9flIWMYtHspL/JE1Pj42pKqB9g+dDGs1kBBMSBkR15MhiDgnsQHBAoGBAKL/wzDE1szszhd/b2XdLYLu3McKvei5bUP7eiAaLcBcAIYpIo1ZkpWTBV8Xg4pHR/FvNJnrOQM5ScVWdNbr72sxkBODF83prjUxvBR2UAsMPYVg8dd/yQ7JT9dCRdBWkuCIIDttF9lr0Yz5uaKJVM0u73zculypUjLniEkc07tBAoGAQ1rO+pKT+/O9WL1+Qq6Wy7Iy44gnrK27mNSBtMLMdqOcMYo81uq9QB2oc1XAdL4dYlHaa8mTK4Nw8ra+GCUGpHyZ6jZL3RF/GEsQHFX65KWW2MD4RDviS1LQhKjXoeAv6lWC7hbsrl83hvgIck0b+fycstfD3wNE2/PkKM3L8cA=
+  public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmnZEBbzYHw3aAky+NBEKORZ14aoOZx+TJ+0w721a0ye1JqMWKK/rfGfz8xdPZ2G6ItYELINJDaA/5vseOLCBhackyh2f7kETgY7zcC14/Q0D6D/6hd7QkRA9yWdPvksEIoP05xWmeh47T4jEroTJ+GeXb8uOT6eKr04NPZtU4w5iaoZvOH3gH0DvFd6IZVbJuGPCzdpoZjRqFlnkDfu0LWsvTH6NQ3zliewJMXQAIqv4GwnzXoBvEO5GucZ+V/aXRQZGE0+4cYrBQJJBEeXm8c71f/tWQ6xBOcChs7cqMFbg6y4KslX/W5p8nZ377BswtpcMKkDM/elDL1+aWA4/BQIDAQAB
+  expiration: 3600
 logging:
+  logging:
+
   level:
+
     root: INFO # Default log level for all loggers. Logs at INFO, WARN, ERROR, FATAL.
     com.wallet.user: DEBUG # Set DEBUG level specifically for your application's packages. This will show all INFO, DEBUG, WARN, ERROR, FATAL messages from your code.
     org.springframework.web: INFO # Spring web logs at INFO level (e.g., incoming requests, handler mappings).
     org.hibernate.SQL: DEBUG # To see the actual SQL queries executed by Hibernate. Very useful for debugging.
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE # To see the parameters bound to the SQL queries. (Be cautious with this in production as it can log sensitive data).
-    org.springframework.security: INFO # ADDED: Log level for Spring Security components.
+    org.springframework.security: DEBUG # ADDED: Log level for Spring Security components.
   file:
     name: logs/user-service.log # Path to the log file (relative to the application's working directory). This will create a 'logs' folder and put the log file there.
     max-size: 10MB # Maximum size of each log file before it's rolled over (archived).

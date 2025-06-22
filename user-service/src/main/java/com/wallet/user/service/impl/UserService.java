@@ -2,34 +2,40 @@ package com.wallet.user.service.impl;
 
 import com.wallet.user.dto.UserRequestDTO;
 import com.wallet.user.dto.UserResponseDTO;
+import com.wallet.user.exception.RoleNotFoundException;
 import com.wallet.user.exception.UserAlreadyExistException;
 import com.wallet.user.exception.UserNotFoundException;
 import com.wallet.user.mapper.UserDTOMapper;
+import com.wallet.user.model.Role;
 import com.wallet.user.model.User;
+import com.wallet.user.repository.RoleRepository;
 import com.wallet.user.repository.UserRepository;
 import com.wallet.user.service.IUserService;
+import jakarta.ws.rs.NotAuthorizedException;
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class UserService implements IUserService {
 
     private UserRepository repository;
     private PasswordEncoder passwordEncoder;
+    private RoleRepository roleRepository;
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
-    public UserService(PasswordEncoder passwordEncoder , UserRepository repository) {
-        this.passwordEncoder = passwordEncoder;
-        this.repository = repository;
-    }
 
     /**
      * @param userRequestDTO
@@ -37,7 +43,7 @@ public class UserService implements IUserService {
      */
     @Transactional
     @Override
-    public UserResponseDTO createUser(UserRequestDTO userRequestDTO) {
+    public UserResponseDTO createUser(UserRequestDTO userRequestDTO) throws RoleNotFoundException {
         logger.info("Attempting to create user with email: {}", userRequestDTO.getEmail());
         User user = new User();
         UserDTOMapper.mapToUserEntity(userRequestDTO,user);
@@ -47,6 +53,10 @@ public class UserService implements IUserService {
             throw new UserAlreadyExistException(String.format("Customer already exists with this mobile number : {%s} or email : {%s}" , user.getPhoneNumber() , user.getEmail()));
         }
         user.setPassword(passwordEncoder.encode(userRequestDTO.getPassword()));
+        Role userRole = roleRepository.findByRoleName("ROLE_USER")
+                .orElseThrow(() -> new RoleNotFoundException("role","ROLE_USER"));
+        user.setRoles(Collections.singleton(userRole));
+
         repository.save(user);
         logger.info("User created successfully with ID: {}", user.getId());
         UserResponseDTO userResponseDTO = new UserResponseDTO();
@@ -85,6 +95,18 @@ public class UserService implements IUserService {
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         UserDTOMapper.mapToUserResponseDto(user,userResponseDTO);
         logger.debug("User found by ID: {}", currentUserId);
+        return userResponseDTO;
+    }
+    @Transactional(readOnly = true)
+    @Override
+    public UserResponseDTO getUserByUserName(String userName) {
+        logger.debug("Fetching user by username: {}", userName);
+        User user = repository.findByUserName(userName).orElseThrow(
+                ()-> new UserNotFoundException("id",userName)
+        );
+        UserResponseDTO userResponseDTO = new UserResponseDTO();
+        UserDTOMapper.mapToUserResponseDto(user,userResponseDTO);
+        logger.debug("User found by username: {}", userName);
         return userResponseDTO;
     }
 
@@ -145,6 +167,27 @@ public class UserService implements IUserService {
             UserDTOMapper.mapToUserResponseDto(user,userResponseDTO);
             return userResponseDTO;
         }).collect(Collectors.toList());
+    }
+    @Override
+    public Long getAuthenticatedUserId() throws Exception {
+        Long currentUserId = -1L ;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication == null || !authentication.isAuthenticated() ||  authentication.getPrincipal() instanceof String){
+            throw new NotAuthorizedException("User Not Authorized");
+        }
+
+        if(authentication.getPrincipal() instanceof User user){
+            currentUserId = user.getId();
+        }
+        else if(authentication.getPrincipal() instanceof org.springframework.security.core.userdetails.User){
+            org.springframework.security.core.userdetails.User user= (org.springframework.security.core.userdetails.User) authentication.getPrincipal();
+            String userName = user.getUsername();
+            currentUserId = getUserByUserName(userName).getId();
+        }
+        else{
+            throw new Exception("Could not retrieve user ID.");
+        }
+        return currentUserId;
     }
 
 }
